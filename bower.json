@@ -1,0 +1,19 @@
+{
+  "name": "csg-eventjs",
+  "description": "Simple pub/sub event implementation",
+  "main": "src/csg-event.js",
+  "authors": [
+    "Justin R. Buchanan"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/jusbuc2k/csg-eventjs",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "lib",
+    "examples"
+  ]
+}
