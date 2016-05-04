@@ -1,4 +1,4 @@
-﻿/// <reference path="http://code.jquery.com/qunit/qunit-1.14.0.js" />
+﻿/// <reference path="http://code.jquery.com/qunit/qunit-1.23.1.js" />
 /// <reference path="../src/csg-event.js" />
 
 QUnit.test('event messages work', function (assert) {
@@ -45,3 +45,32 @@ QUnit.test('event messages work', function (assert) {
     assert.strictEqual(callcount, 3);
 
 });
+
+QUnit.test('event async option works', function (assert) {
+    expect(3);
+
+    var async = assert.async();
+    var event1 = new csg.Event(true);
+    var event2 = new csg.Event(false);
+    var callcount = 0;
+    var context = {};
+       
+    event1.subscribe(function () {       
+        callcount++;
+    });
+
+    event2.subscribe(function () {
+        callcount++;
+    });
+
+    event1.dispatch(context);    
+    assert.strictEqual(callcount, 0);
+    event2.dispatch(context);
+    assert.strictEqual(callcount, 1);
+
+    window.setTimeout(function () {
+        assert.strictEqual(callcount, 2);
+        async();
+    }, 0);    
+});
+

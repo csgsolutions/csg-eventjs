@@ -23,8 +23,10 @@
         }
     }(function (exports, amdRequire) {
 
-        function Event() {
+        function Event(async) {
+            /// <param name="async">If true, subscriber callbacks will be run via window.setTimeout()</param>
             this._subscribers = [];
+            this.async = (async === true);
         }
 
         Event.prototype.subscribe = function (callback) {
@@ -47,8 +49,16 @@
             /// <summary>Notifies all subscribers of the event by executing their callback.</summary>
             /// <param name="thisArg" type="Object">An object to use as this.</param>
             /// <param name="args" type="Array">An array of arguments.</param>
-            for (var i = 0; i < this._subscribers.length; i++) {
-                this._subscribers[i].apply(thisArg, args);
+            var fireAllCallbacks = function () {
+                for (var i = 0; i < this._subscribers.length; i++) {
+                    this._subscribers[i].apply(thisArg, args);
+                }
+            }.bind(this);
+
+            if (this.async === true) {
+                window.setTimeout(fireAllCallbacks, 0);
+            } else {
+                fireAllCallbacks();
             }
         };
 
