@@ -6,7 +6,7 @@
     "Justin R. Buchanan"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/jusbuc2k/csg-eventjs",
+  "homepage": "https://github.com/csgsolutions/csg-eventjs",
   "ignore": [
     "**/.*",
     "node_modules",
