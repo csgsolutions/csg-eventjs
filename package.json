@@ -3,6 +3,14 @@
   "version": "1.0.1",
   "description": "Simple pub/sub event library.",
   "main": "dist/csg-event.js",
+  "files": [
+    "README.md",    
+    "LICENSE",
+    "dist/*.*",
+    "index.d.ts",
+    "package.json"
+  ],
+  "typings": "index.d.ts",
   "directories": {
     "test": "tests"
   },
@@ -23,6 +31,6 @@
   "bugs": {
     "url": "https://github.com/csgsolutions/csg-eventjs/issues"
   },
-  "homepage": "https://github.com/csgsolutions/csg-eventjs#readme",
-  "typings": "index.d.ts"
+  "homepage": "https://github.com/csgsolutions/csg-eventjs#readme"
+  
 }
