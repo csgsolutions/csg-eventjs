@@ -2,14 +2,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Tests</title>
-    <link href="http://code.jquery.com/qunit/qunit-1.14.0.css" rel="stylesheet" type="text/css" />
+    <link href="//code.jquery.com/qunit/qunit-1.23.1.css" rel="stylesheet" type="text/css" />
+    <script src="//code.jquery.com/qunit/qunit-1.23.1.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.js"></script>
+    <script>
+        require.config({
+            paths: {
+                "src": "/dist/"
+            }
+        });
+    </script>
 </head>
 <body>
     <div id="qunit"></div>
-    <div id="qunit-fixture"></div>
-
-    <script src="//code.jquery.com/qunit/qunit-1.23.1.js"></script>
-    <script src="../src/csg-event.js"></script>
-    <script src="tests.js"></script>
+    <div id="qunit-fixture"></div>    
+    <script>
+        require(['eventBasics'])
+    </script>
 </body>
 </html>

@@ -1,0 +1,28 @@
+{
+  "name": "csg-eventjs",
+  "version": "1.0.1",
+  "description": "Simple pub/sub event library.",
+  "main": "dist/csg-event.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csgsolutions/csg-eventjs.git"
+  },
+  "keywords": [
+    "Event",
+    "Pub",
+    "Sub"
+  ],
+  "author": "Justin R. Buchanan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/csgsolutions/csg-eventjs/issues"
+  },
+  "homepage": "https://github.com/csgsolutions/csg-eventjs#readme",
+  "typings": "index.d.ts"
+}

@@ -1,0 +1,24 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "noEmitOnError": false,
+    "removeComments": false,
+    "sourceRoot": "src",
+    "sourceMap": true,
+    "module": "umd",
+    "target": "es5",
+    "outDir": "dist",
+    "inlineSourceMap": false,
+    "inlineSources": true,
+    "lib": ["dom", "es2015"],
+    "declaration": true
+  },  
+  "exclude": [
+    "node_modules",
+    "wwwroot",
+    "dist",
+    "tests",
+    "index.d.ts"
+  ]
+}

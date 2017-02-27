@@ -13,7 +13,21 @@ None
 
 ### Event Object
 
-new csg.Event()
+```js
+import { Event } from "csg-eventjs";
+
+var event = new Event();
+var sub = event.subscribe(function(msg){
+    console.log(msg)
+});
+
+// logs Hello World!
+event.dispatch(["Hello World!"]);
+// un-subscribe from the event.
+sub.dispose();
+// nothing will be logged
+event.dispatch(["Won't See Me!"]);
+```
 
 - subscribe(callback): 
 
@@ -32,19 +46,3 @@ new csg.Event()
 - dispose()
 
     Removes the subscription from the event it was added to. (Same as calling unsbuscribe on the Event).
-
-```html
-
-<script src="csg-event.js"></script>
-<script>
-    var evt = new csg.Event();
-
-    evt.subscribe(function(message){
-        console.log(message);
-    });
-
-    evt.dispatch(null, ['Hello World!']);
-    // Prints 'Hello World' to the console
-</script>
-
-```
